@@ -1,6 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.DataModel = exports.httpPostJson = exports.httpGet = exports.httpPost = exports.http = exports.DATE_FORMAT = exports.optValueType = exports.optOption = exports.optValue = exports.optFn = void 0;
+exports.httpUniappRequest = exports.DataModel = exports.httpPostJson = exports.httpGet = exports.httpPost = exports.http = exports.DATE_FORMAT = exports.optValueType = exports.optOption = exports.optValue = exports.optFn = void 0;
 const where_option_1 = require("./where_option");
 Object.defineProperty(exports, "optFn", { enumerable: true, get: function () { return where_option_1.optFn; } });
 Object.defineProperty(exports, "optValue", { enumerable: true, get: function () { return where_option_1.optValue; } });
@@ -15,3 +15,5 @@ Object.defineProperty(exports, "httpGet", { enumerable: true, get: function () {
 Object.defineProperty(exports, "httpPostJson", { enumerable: true, get: function () { return http_1.httpPostJson; } });
 const data_1 = require("./data");
 Object.defineProperty(exports, "DataModel", { enumerable: true, get: function () { return data_1.DataModel; } });
+const uni_http_1 = require("./uni_http");
+Object.defineProperty(exports, "httpUniappRequest", { enumerable: true, get: function () { return uni_http_1.httpUniappRequest; } });

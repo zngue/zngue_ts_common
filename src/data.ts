@@ -15,7 +15,7 @@ export class DataModel {
         };
         return httpPostJson<Resonpse<T>>("zngpay/public/dataCreate", formData);
     }
-    public list<T = any>(where?: Record<string, OptionData>, extOption?: ExtOptionData) {
+    public list<T = any>(where: OptionData[] = [], extOption?: ExtOptionData) {
         const formData: Partial<DataRequest> = {
             table: this.table,
             where: where,
@@ -25,7 +25,7 @@ export class DataModel {
         };
         return httpPostJson<Resonpse<T>>("zngpay/public/dataList", formData);
     }
-    public listWithPage<T = any>(where?: Record<string, OptionData>, extOption?: ExtOptionData) {
+    public listWithPage<T = any>(where: OptionData[] = [], extOption?: ExtOptionData) {
         const formData: Partial<DataRequest> = {
             table: this.table,
             where: where,
@@ -35,7 +35,7 @@ export class DataModel {
         };
         return httpPostJson<Resonpse<CommonList<T>>>("zngpay/public/dataList", formData);
     }
-    public update<T = any>(data: Record<string, OptionData>, where: Record<string, OptionData>) {
+    public update<T = any>(data: Record<string, OptionData>, where: OptionData[] = []) {
         const formData: Partial<DataRequest> = {
             table: this.table,
             where: where,
@@ -43,7 +43,7 @@ export class DataModel {
         };
         return httpPostJson<Resonpse<T>>("zngpay/public/dataUpdate", formData);
     }
-    public content<T = any>(where: Record<string, OptionData>) {
+    public content<T = any>(where: OptionData[] = []) {
         const formData: Partial<DataRequest> = {
             table: this.table,
             where: where,

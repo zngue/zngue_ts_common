@@ -2,6 +2,13 @@
 # yarn lockfile v1
 
 
+"@types/uni-app@^1.4.4":
+  version "1.4.4"
+  resolved "https://registry.npmjs.org/@types/uni-app/-/uni-app-1.4.4.tgz#fe73d0e7c89d5e750605e088ff6695846e019c36"
+  integrity sha512-ZTXnrCTblZyoLIoKbTv1Whz1nxrTcM7vg0qGXzDpXP8m9MqdjKt48N3FffQT1IsJWNkxbvJ1Eg5UHDaq+k+oBQ==
+  dependencies:
+    vue "^2.6.8"
+
 asynckit@^0.4.0:
   version "0.4.0"
   resolved "https://registry.npmmirror.com/asynckit/-/asynckit-0.4.0.tgz#c79ed97f7f34cb8f2ba1bc9790bcc366474b4b79"
@@ -117,3 +124,8 @@ typescript@^4.7.2:
   version "4.7.2"
   resolved "https://registry.npmmirror.com/typescript/-/typescript-4.7.2.tgz#1f9aa2ceb9af87cca227813b4310fff0b51593c4"
   integrity sha512-Mamb1iX2FDUpcTRzltPxgWMKy3fhg0TN378ylbktPGPK/99KbDtMQ4W1hwgsbPAsG3a0xKa1vmw4VKZQbkvz5A==
+
+vue@^2.6.8:
+  version "2.6.14"
+  resolved "https://registry.npmjs.org/vue/-/vue-2.6.14.tgz#e51aa5250250d569a3fbad3a8a5a687d6036e235"
+  integrity sha512-x2284lgYvjOMj3Za7kqzRcUSxBboHqtgRE2zlos1qWaOye5yUmHn42LB1250NJBLRwEcdrB0JRwyPTEPhfQjiQ==

@@ -13,7 +13,7 @@ class DataModel {
         };
         return (0, http_1.httpPostJson)("zngpay/public/dataCreate", formData);
     }
-    list(where, extOption) {
+    list(where = [], extOption) {
         const formData = {
             table: this.table,
             where: where,
@@ -23,7 +23,7 @@ class DataModel {
         };
         return (0, http_1.httpPostJson)("zngpay/public/dataList", formData);
     }
-    listWithPage(where, extOption) {
+    listWithPage(where = [], extOption) {
         const formData = {
             table: this.table,
             where: where,
@@ -33,7 +33,7 @@ class DataModel {
         };
         return (0, http_1.httpPostJson)("zngpay/public/dataList", formData);
     }
-    update(data, where) {
+    update(data, where = []) {
         const formData = {
             table: this.table,
             where: where,
@@ -41,7 +41,7 @@ class DataModel {
         };
         return (0, http_1.httpPostJson)("zngpay/public/dataUpdate", formData);
     }
-    content(where) {
+    content(where = []) {
         const formData = {
             table: this.table,
             where: where,
