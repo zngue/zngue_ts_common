@@ -1,5 +1,5 @@
 import { CommonList, DataRequest, ExtOptionData, Resonpse } from "./data_types";
-import { httpPostJson } from "./http";
+import { httpPostJson } from "./../http/http";
 import { OptionData } from "./types";
 
 export class DataModel {

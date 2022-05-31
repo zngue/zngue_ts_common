@@ -71,6 +71,12 @@ function ifDefPlatform() {
     //#endif
     return platform;
 }
+const platformMp = () => {
+    // #ifdef MP 
+    return true;
+    // #endif 
+    return false;
+};
 /**平台类型*/
 exports.Platform = ifDefPlatform();
 /**默认导出平台类型*/
@@ -78,4 +84,4 @@ exports.default = exports.Platform;
 exports.isH5 = exports.Platform === EPlatform.H5;
 exports.isAppPlus = exports.Platform === EPlatform.AppPlus;
 exports.isMpWeixin = exports.Platform === EPlatform.MpWeixin;
-exports.isMp = exports.Platform === EPlatform.Mp;
+exports.isMp = platformMp();

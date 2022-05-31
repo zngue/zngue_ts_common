@@ -1,6 +1,7 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.httpUniappRequest = exports.HttpContentType = exports.HtppType = void 0;
+const platform_1 = require("./platform");
 var HtppType;
 (function (HtppType) {
     HtppType["GET"] = "GET";
@@ -17,9 +18,9 @@ class Http {
         this.host = host;
     }
     getHost() {
-        //#ifdef MP
-        return this.host;
-        //#endif
+        if (platform_1.isMp) {
+            return this.host;
+        }
         return "";
     }
     get(url, data = {}, header = {}) {

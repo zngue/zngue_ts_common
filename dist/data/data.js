@@ -1,7 +1,7 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.DataModel = void 0;
-const http_1 = require("./http");
+const http_1 = require("./../http/http");
 class DataModel {
     constructor(table) {
         this.table = table;

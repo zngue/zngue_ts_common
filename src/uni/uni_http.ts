@@ -19,9 +19,9 @@ class Http {
         this.host = host
     }
     public getHost(): string {
-        //#ifdef MP
-        return this.host
-        //#endif
+        if (isMp) {
+            return this.host
+        }
         return ""
     }
     public get<T = any>(url: string, data: any = {}, header: Record<HttpHeaderType, any> = {}): Promise<T> {

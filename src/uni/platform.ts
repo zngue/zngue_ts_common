@@ -81,6 +81,14 @@ function ifDefPlatform(): EPlatform {
 
     return platform
 }
+const platformMp = () => {
+
+    // #ifdef MP 
+    return true
+    // #endif 
+    return false
+
+}
 
 /**平台类型*/
 export const Platform: EPlatform = ifDefPlatform()
@@ -91,4 +99,4 @@ export default Platform
 export const isH5 = Platform === EPlatform.H5
 export const isAppPlus = Platform === EPlatform.AppPlus
 export const isMpWeixin = Platform === EPlatform.MpWeixin
-export const isMp = Platform===EPlatform.Mp
+export const isMp = platformMp()
