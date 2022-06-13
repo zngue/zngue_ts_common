@@ -13,7 +13,7 @@ export enum HttpContentType {
     JSON = "application/json"
 }
 
-class Http {
+export class Http {
     public host: string
     public constructor(host: string) {
         this.host = host
@@ -57,7 +57,7 @@ class Http {
             })
         })
     }
-    public postJson(url: string, data: any = {}, header: Record<HttpHeaderType, any> = {}) {
+    public postJson<T = any>(url: string, data: any = {}, header: Record<HttpHeaderType, any> = {}): Promise<T> {
         url = this.getHost() + url
         header["content-type"] = HttpContentType.JSON
         return new Promise((resolve: any, errFail: any) => {
@@ -76,6 +76,6 @@ class Http {
         })
     }
 }
-export const httpUniappRequest = (host: string = "") => {
+export const httpUniappRequest = (host: string = ""): Http => {
     return new Http(host)
 }

@@ -1,6 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.DATE_FORMAT = exports.DataModel = exports.windowOnscroll = exports.uniappJumpTo = exports.syncPromise = exports.copyText = exports.httpUniappRequest = exports.httpPostJson = exports.httpGet = exports.httpPost = exports.http = exports.optValueType = exports.optOption = exports.optValue = exports.optFn = void 0;
+exports.Http = exports.DATE_FORMAT = exports.DataModel = exports.dataModel = exports.windowOnscroll = exports.uniappJumpTo = exports.syncPromise = exports.copyText = exports.httpUniappRequest = exports.httpPostJson = exports.httpGet = exports.httpPost = exports.http = exports.optValueType = exports.optOption = exports.optValue = exports.optFn = void 0;
 const where_option_1 = require("./data/where_option");
 Object.defineProperty(exports, "optFn", { enumerable: true, get: function () { return where_option_1.optFn; } });
 Object.defineProperty(exports, "optValue", { enumerable: true, get: function () { return where_option_1.optValue; } });
@@ -15,8 +15,10 @@ Object.defineProperty(exports, "httpGet", { enumerable: true, get: function () {
 Object.defineProperty(exports, "httpPostJson", { enumerable: true, get: function () { return http_1.httpPostJson; } });
 const data_1 = require("./data/data");
 Object.defineProperty(exports, "DataModel", { enumerable: true, get: function () { return data_1.DataModel; } });
+Object.defineProperty(exports, "dataModel", { enumerable: true, get: function () { return data_1.dataModel; } });
 const uni_http_1 = require("./uni/uni_http");
 Object.defineProperty(exports, "httpUniappRequest", { enumerable: true, get: function () { return uni_http_1.httpUniappRequest; } });
+Object.defineProperty(exports, "Http", { enumerable: true, get: function () { return uni_http_1.Http; } });
 const uni_fn_1 = require("./uni/uni_fn");
 Object.defineProperty(exports, "copyText", { enumerable: true, get: function () { return uni_fn_1.copyText; } });
 Object.defineProperty(exports, "syncPromise", { enumerable: true, get: function () { return uni_fn_1.syncPromise; } });

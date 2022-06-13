@@ -8,13 +8,12 @@ export declare enum HttpContentType {
     FORM_URL_ENCODED = "application/x-www-form-urlencoded",
     JSON = "application/json"
 }
-declare class Http {
+export declare class Http {
     host: string;
     constructor(host: string);
     getHost(): string;
     get<T = any>(url: string, data?: any, header?: Record<HttpHeaderType, any>): Promise<T>;
     post<T = any>(url: string, data?: any, header?: Record<HttpHeaderType, any>): Promise<T>;
-    postJson(url: string, data?: any, header?: Record<HttpHeaderType, any>): Promise<unknown>;
+    postJson<T = any>(url: string, data?: any, header?: Record<HttpHeaderType, any>): Promise<T>;
 }
 export declare const httpUniappRequest: (host?: string) => Http;
-export {};

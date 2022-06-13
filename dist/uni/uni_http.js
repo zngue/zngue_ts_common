@@ -1,6 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.httpUniappRequest = exports.HttpContentType = exports.HtppType = void 0;
+exports.httpUniappRequest = exports.Http = exports.HttpContentType = exports.HtppType = void 0;
 const platform_1 = require("./platform");
 var HtppType;
 (function (HtppType) {
@@ -75,6 +75,7 @@ class Http {
         });
     }
 }
+exports.Http = Http;
 const httpUniappRequest = (host = "") => {
     return new Http(host);
 };

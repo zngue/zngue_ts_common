@@ -9,8 +9,8 @@ import {
 } from "./data/types";
 import { http, httpPost, httpGet, httpPostJson } from "./http/http";
 import { CommonList, DataRequest, ExtOptionData, Resonpse } from "./data/data_types";
-import { DataModel } from "./data/data";
-import { httpUniappRequest } from "./uni/uni_http";
+import { DataModel, dataModel } from "./data/data";
+import { httpUniappRequest, Http } from "./uni/uni_http";
 import {
     copyText,
     Callback,
@@ -33,6 +33,7 @@ export {
     syncPromise,
     uniappJumpTo,
     windowOnscroll,
+    dataModel
 };
 export {
     OnscrollCallback,
@@ -48,4 +49,12 @@ export {
     OptionData,
     DATE_FORMAT,
     Common,
+    Http
 };
+import * as ZngUni from "./uni/uni"
+
+
+
+
+
+
