@@ -11,6 +11,7 @@ import { http, httpPost, httpGet, httpPostJson } from "./http/http";
 import { CommonList, DataRequest, ExtOptionData, Resonpse } from "./data/data_types";
 import { DataModel, dataModel } from "./data/data";
 import { httpUniappRequest, Http } from "./uni/uni_http";
+import * as ZngUni from "./uni/uni"
 import {
     copyText,
     Callback,
@@ -49,9 +50,11 @@ export {
     OptionData,
     DATE_FORMAT,
     Common,
-    Http
+    Http,
+    ZngUni
 };
-import * as ZngUni from "./uni/uni"
+
+
 
 
 
