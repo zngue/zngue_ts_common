@@ -4,6 +4,13 @@ exports.dataModel = exports.DataModel = void 0;
 const http_1 = require("./../http/http");
 class DataModel {
     constructor(table, http) {
+        this.dataUri = {
+            dataCreate: "zngpay/public/dataCreate",
+            dataList: "zngpay/public/dataList",
+            dataListWithCount: "zngpay/public/dataList",
+            dataUpdate: "zngpay/public/dataUpdate",
+            dataFirst: "zngpay/public/dataFirst"
+        };
         this.table = table;
         this.http = http;
     }
@@ -12,10 +19,7 @@ class DataModel {
             table: this.table,
             data: data,
         };
-        if (this.http) {
-            return this.http.postJson("zngpay/public/dataCreate", formData);
-        }
-        return (0, http_1.httpPostJson)("zngpay/public/dataCreate", formData);
+        return this.httpDo(this.dataUri.dataCreate, formData);
     }
     list(where = [], extOption) {
         const formData = {
@@ -25,12 +29,9 @@ class DataModel {
             pageSize: (extOption === null || extOption === void 0 ? void 0 : extOption.pageSize) || 15,
             order: extOption === null || extOption === void 0 ? void 0 : extOption.order,
         };
-        if (this.http) {
-            return this.http.postJson("zngpay/public/dataList", formData);
-        }
-        return (0, http_1.httpPostJson)("zngpay/public/dataList", formData);
+        return this.httpDo(this.dataUri.dataList, formData);
     }
-    listWithPage(where = [], extOption) {
+    listWithCount(where = [], extOption) {
         const formData = {
             table: this.table,
             where: where,
@@ -38,10 +39,7 @@ class DataModel {
             pageSize: (extOption === null || extOption === void 0 ? void 0 : extOption.pageSize) || 15,
             order: extOption === null || extOption === void 0 ? void 0 : extOption.order,
         };
-        if (this.http) {
-            return this.http.postJson("zngpay/public/dataList", formData);
-        }
-        return (0, http_1.httpPostJson)("zngpay/public/dataList", formData);
+        return this.httpDo(this.dataUri.dataListWithCount, formData);
     }
     update(data, where = []) {
         const formData = {
@@ -49,20 +47,29 @@ class DataModel {
             where: where,
             data: data,
         };
-        if (this.http) {
-            return this.http.postJson("zngpay/public/dataUpdate", formData);
-        }
-        return (0, http_1.httpPostJson)("zngpay/public/dataUpdate", formData);
+        return this.httpDo(this.dataUri.dataUpdate, formData);
     }
     content(where = []) {
         const formData = {
             table: this.table,
             where: where,
         };
-        if (this.http) {
-            return this.http.postJson("zngpay/public/dataFirst", formData);
+        const uri = this.dataUri.dataFirst;
+        return this.httpDo(uri, formData);
+    }
+    anyData(key, data) {
+        const uri = this.dataUri[key];
+        if (!uri) {
+            return;
         }
-        return (0, http_1.httpPostJson)("zngpay/public/dataFirst", formData);
+        data.table = this.table;
+        return this.httpDo(uri, data);
+    }
+    httpDo(url, data) {
+        if (this.http) {
+            return this.http.postJson(url, data);
+        }
+        return (0, http_1.httpPostJson)(url, data);
     }
 }
 exports.DataModel = DataModel;
