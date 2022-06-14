@@ -15,6 +15,7 @@ export declare interface OptionData<T = any> {
     option?: OptionType; //where条件使用
     valueType?: VauleType;
     value?: T;
+    filed: string
 }
 export type OptionFn = (data: OptionData) => OptionData
 

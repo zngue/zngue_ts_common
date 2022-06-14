@@ -6,6 +6,12 @@ export const optOption = (option: OptionType): OptionFn => {
         return data
     }
 }
+export const filedOption = (filed: string): OptionFn => {
+    return (data: OptionData): OptionData => {
+        data.filed = filed
+        return data
+    }
+}
 export const optValueType = (valueType: VauleType = "string"): OptionFn => {
     return (data: OptionData): OptionData => {
         data.valueType = valueType
@@ -18,11 +24,12 @@ export const optValue = <T = any>(value: any): OptionFn => {
         return data
     }
 }
-export const optFn = (...data: OptionFn[]): OptionData => {
+export const optFn = (field: string, ...data: OptionFn[]): OptionData => {
     let where: OptionData = {
         option: "eq",
         value: "",
-        valueType: "string"
+        valueType: "string",
+        filed: field
     }
     if (data.length > 0) {
         data.forEach((fn: OptionFn) => {

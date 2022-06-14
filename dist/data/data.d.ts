@@ -14,10 +14,10 @@ export declare class DataModel {
     http?: Http;
     dataUri: DAtA_URI;
     constructor(table: string, http?: Http);
-    create<T = any>(data: Record<string, OptionData>): Promise<Resonpse<T>>;
+    create<T = any>(data: OptionData[]): Promise<Resonpse<T>>;
     list<T = any>(where?: OptionData[], extOption?: ExtOptionData): Promise<Resonpse<T>>;
     listWithCount<T = any>(where?: OptionData[], extOption?: ExtOptionData): Promise<Resonpse<CommonList<T>>>;
-    update<T = any>(data: Record<string, OptionData>, where?: OptionData[]): Promise<Resonpse<T>>;
+    update<T = any>(data: OptionData[], where?: OptionData[]): Promise<Resonpse<T>>;
     content<T = any>(where?: OptionData[]): Promise<Resonpse<T>>;
     anyData<T = any>(key: string, data: DataRequest): Promise<Resonpse<T>> | undefined;
     httpDo<T = any>(url: string, data: Partial<DataRequest>): Promise<Resonpse<T>>;

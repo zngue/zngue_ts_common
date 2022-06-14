@@ -19,12 +19,13 @@ var __importStar = (this && this.__importStar) || function (mod) {
     return result;
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.ZngUni = exports.Http = exports.DATE_FORMAT = exports.DataModel = exports.dataModel = exports.windowOnscroll = exports.uniappJumpTo = exports.syncPromise = exports.copyText = exports.httpUniappRequest = exports.httpPostJson = exports.httpGet = exports.httpPost = exports.http = exports.optValueType = exports.optOption = exports.optValue = exports.optFn = void 0;
+exports.ZngUni = exports.Http = exports.DATE_FORMAT = exports.DataModel = exports.dataModel = exports.windowOnscroll = exports.uniappJumpTo = exports.syncPromise = exports.copyText = exports.filedOption = exports.httpUniappRequest = exports.httpPostJson = exports.httpGet = exports.httpPost = exports.http = exports.optValueType = exports.optOption = exports.optValue = exports.optFn = void 0;
 const where_option_1 = require("./data/where_option");
 Object.defineProperty(exports, "optFn", { enumerable: true, get: function () { return where_option_1.optFn; } });
 Object.defineProperty(exports, "optValue", { enumerable: true, get: function () { return where_option_1.optValue; } });
 Object.defineProperty(exports, "optOption", { enumerable: true, get: function () { return where_option_1.optOption; } });
 Object.defineProperty(exports, "optValueType", { enumerable: true, get: function () { return where_option_1.optValueType; } });
+Object.defineProperty(exports, "filedOption", { enumerable: true, get: function () { return where_option_1.filedOption; } });
 const types_1 = require("./data/types");
 Object.defineProperty(exports, "DATE_FORMAT", { enumerable: true, get: function () { return types_1.DATE_FORMAT; } });
 const http_1 = require("./http/http");

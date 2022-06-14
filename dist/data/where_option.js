@@ -1,6 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.optFn = exports.optValue = exports.optValueType = exports.optOption = void 0;
+exports.optFn = exports.optValue = exports.optValueType = exports.filedOption = exports.optOption = void 0;
 const optOption = (option) => {
     return (data) => {
         data.option = option;
@@ -8,6 +8,13 @@ const optOption = (option) => {
     };
 };
 exports.optOption = optOption;
+const filedOption = (filed) => {
+    return (data) => {
+        data.filed = filed;
+        return data;
+    };
+};
+exports.filedOption = filedOption;
 const optValueType = (valueType = "string") => {
     return (data) => {
         data.valueType = valueType;
@@ -22,11 +29,12 @@ const optValue = (value) => {
     };
 };
 exports.optValue = optValue;
-const optFn = (...data) => {
+const optFn = (field, ...data) => {
     let where = {
         option: "eq",
         value: "",
-        valueType: "string"
+        valueType: "string",
+        filed: field
     };
     if (data.length > 0) {
         data.forEach((fn) => {

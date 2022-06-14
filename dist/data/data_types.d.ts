@@ -1,18 +1,18 @@
 import { OptionData } from "./types";
-export declare interface DataRequest {
+export interface DataRequest {
     table: string;
-    data: Record<string, Partial<OptionData>>;
+    data: OptionData[];
     where: OptionData[];
     page: number;
     pageSize: number;
     order: string;
 }
-export declare interface ExtOptionData {
+export interface ExtOptionData {
     page: number;
     pageSize: number;
     order: string;
 }
-export declare interface Resonpse<T = any> {
+export interface Resonpse<T = any> {
     code: number;
     msg: string;
     data: T;

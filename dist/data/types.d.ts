@@ -4,6 +4,7 @@ export declare interface OptionData<T = any> {
     option?: OptionType;
     valueType?: VauleType;
     value?: T;
+    filed: string;
 }
 export declare type OptionFn = (data: OptionData) => OptionData;
 export declare enum DATE_FORMAT {

@@ -25,7 +25,7 @@ export class DataModel {
         this.table = table;
         this.http = http;
     }
-    public create<T = any>(data: Record<string, OptionData>) {
+    public create<T = any>(data: OptionData[]) {
         const formData: Partial<DataRequest> = {
             table: this.table,
             data: data,
@@ -52,7 +52,7 @@ export class DataModel {
         };
         return this.httpDo<CommonList<T>>(this.dataUri.dataListWithCount, formData)
     }
-    public update<T = any>(data: Record<string, OptionData>, where: OptionData[] = []) {
+    public update<T = any>(data: OptionData[], where: OptionData[] = []) {
         const formData: Partial<DataRequest> = {
             table: this.table,
             where: where,

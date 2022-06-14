@@ -1,4 +1,4 @@
-import { optFn, optValue, optOption, optValueType } from "./data/where_option";
+import { optFn, optValue, optOption, optValueType, filedOption } from "./data/where_option";
 import {
     OptionType,
     OptionFn,
@@ -30,6 +30,7 @@ export {
     httpGet,
     httpPostJson,
     httpUniappRequest,
+    filedOption,
     copyText,
     syncPromise,
     uniappJumpTo,
