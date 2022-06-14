@@ -36,9 +36,10 @@ export class DataModel {
         const formData: Partial<DataRequest> = {
             table: this.table,
             where: where,
-            page: extOption?.page || 1,
-            pageSize: extOption?.pageSize || 15,
+            page: extOption?.page,
+            pageSize: extOption?.pageSize,
             order: extOption?.order,
+            join: extOption?.join
         };
         return this.httpDo<T>(this.dataUri.dataList, formData)
     }
@@ -46,9 +47,11 @@ export class DataModel {
         const formData: Partial<DataRequest> = {
             table: this.table,
             where: where,
-            page: extOption?.page || 1,
-            pageSize: extOption?.pageSize || 15,
+            page: extOption?.page,
+            pageSize: extOption?.pageSize,
             order: extOption?.order,
+            join: extOption?.join
+
         };
         return this.httpDo<CommonList<T>>(this.dataUri.dataListWithCount, formData)
     }

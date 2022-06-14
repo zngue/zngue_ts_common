@@ -7,11 +7,13 @@ export interface DataRequest {
     page: number;
     pageSize: number;
     order: string;
+    join?: string
 }
 export interface ExtOptionData {
     page: number;
     pageSize: number;
     order: string;
+    join: string
 }
 export interface Resonpse<T = any> {
     code: number;

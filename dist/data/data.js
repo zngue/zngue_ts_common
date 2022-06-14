@@ -25,9 +25,10 @@ class DataModel {
         const formData = {
             table: this.table,
             where: where,
-            page: (extOption === null || extOption === void 0 ? void 0 : extOption.page) || 1,
-            pageSize: (extOption === null || extOption === void 0 ? void 0 : extOption.pageSize) || 15,
+            page: extOption === null || extOption === void 0 ? void 0 : extOption.page,
+            pageSize: extOption === null || extOption === void 0 ? void 0 : extOption.pageSize,
             order: extOption === null || extOption === void 0 ? void 0 : extOption.order,
+            join: extOption === null || extOption === void 0 ? void 0 : extOption.join
         };
         return this.httpDo(this.dataUri.dataList, formData);
     }
@@ -35,9 +36,10 @@ class DataModel {
         const formData = {
             table: this.table,
             where: where,
-            page: (extOption === null || extOption === void 0 ? void 0 : extOption.page) || 1,
-            pageSize: (extOption === null || extOption === void 0 ? void 0 : extOption.pageSize) || 15,
+            page: extOption === null || extOption === void 0 ? void 0 : extOption.page,
+            pageSize: extOption === null || extOption === void 0 ? void 0 : extOption.pageSize,
             order: extOption === null || extOption === void 0 ? void 0 : extOption.order,
+            join: extOption === null || extOption === void 0 ? void 0 : extOption.join
         };
         return this.httpDo(this.dataUri.dataListWithCount, formData);
     }
