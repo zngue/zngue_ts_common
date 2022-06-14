@@ -51,10 +51,12 @@ class DataModel {
         };
         return this.httpDo(this.dataUri.dataUpdate, formData);
     }
-    content(where = []) {
+    content(where = [], extOption) {
         const formData = {
             table: this.table,
             where: where,
+            order: extOption === null || extOption === void 0 ? void 0 : extOption.order,
+            join: extOption === null || extOption === void 0 ? void 0 : extOption.join
         };
         const uri = this.dataUri.dataFirst;
         return this.httpDo(uri, formData);

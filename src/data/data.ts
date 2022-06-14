@@ -63,10 +63,12 @@ export class DataModel {
         };
         return this.httpDo<T>(this.dataUri.dataUpdate, formData)
     }
-    public content<T = any>(where: OptionData[] = []) {
+    public content<T = any>(where: OptionData[] = [], extOption?: ExtOptionData) {
         const formData: Partial<DataRequest> = {
             table: this.table,
             where: where,
+            order: extOption?.order,
+            join: extOption?.join
         };
         const uri = this.dataUri.dataFirst
         return this.httpDo<T>(uri, formData)

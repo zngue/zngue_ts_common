@@ -18,7 +18,7 @@ export declare class DataModel {
     list<T = any>(where?: OptionData[], extOption?: ExtOptionData): Promise<Resonpse<T>>;
     listWithCount<T = any>(where?: OptionData[], extOption?: ExtOptionData): Promise<Resonpse<CommonList<T>>>;
     update<T = any>(data: OptionData[], where?: OptionData[]): Promise<Resonpse<T>>;
-    content<T = any>(where?: OptionData[]): Promise<Resonpse<T>>;
+    content<T = any>(where?: OptionData[], extOption?: ExtOptionData): Promise<Resonpse<T>>;
     anyData<T = any>(key: string, data: DataRequest): Promise<Resonpse<T>> | undefined;
     httpDo<T = any>(url: string, data: Partial<DataRequest>): Promise<Resonpse<T>>;
 }
