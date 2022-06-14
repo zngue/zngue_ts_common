@@ -3,7 +3,7 @@ import { CommonList, DataRequest, ExtOptionData, Resonpse } from "./data_types";
 import { httpPostJson } from "./../http/http";
 import { OptionData } from "./types";
 
-export declare interface DAtA_URI {
+export interface DAtA_URI {
     dataCreate: string
     dataList: string
     dataListWithCount: string
