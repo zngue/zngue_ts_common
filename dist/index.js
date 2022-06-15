@@ -19,7 +19,7 @@ var __importStar = (this && this.__importStar) || function (mod) {
     return result;
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.ZngUni = exports.Http = exports.DATE_FORMAT = exports.DataModel = exports.dataModel = exports.windowOnscroll = exports.uniappJumpTo = exports.syncPromise = exports.copyText = exports.filedOption = exports.httpUniappRequest = exports.httpPostJson = exports.httpGet = exports.httpPost = exports.http = exports.optValueType = exports.optOption = exports.optValue = exports.optFn = void 0;
+exports.BaseService = exports.ZngUni = exports.Http = exports.DATE_FORMAT = exports.DataModel = exports.dataModel = exports.windowOnscroll = exports.uniappJumpTo = exports.syncPromise = exports.copyText = exports.filedOption = exports.httpUniappRequest = exports.httpPostJson = exports.httpGet = exports.httpPost = exports.http = exports.optValueType = exports.optOption = exports.optValue = exports.optFn = void 0;
 const where_option_1 = require("./data/where_option");
 Object.defineProperty(exports, "optFn", { enumerable: true, get: function () { return where_option_1.optFn; } });
 Object.defineProperty(exports, "optValue", { enumerable: true, get: function () { return where_option_1.optValue; } });
@@ -41,6 +41,8 @@ Object.defineProperty(exports, "httpUniappRequest", { enumerable: true, get: fun
 Object.defineProperty(exports, "Http", { enumerable: true, get: function () { return uni_http_1.Http; } });
 const ZngUni = __importStar(require("./uni/uni"));
 exports.ZngUni = ZngUni;
+const base_1 = require("./uni/base");
+Object.defineProperty(exports, "BaseService", { enumerable: true, get: function () { return base_1.BaseService; } });
 const uni_fn_1 = require("./uni/uni_fn");
 Object.defineProperty(exports, "copyText", { enumerable: true, get: function () { return uni_fn_1.copyText; } });
 Object.defineProperty(exports, "syncPromise", { enumerable: true, get: function () { return uni_fn_1.syncPromise; } });

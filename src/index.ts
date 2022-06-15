@@ -12,6 +12,7 @@ import { CommonList, DataRequest, ExtOptionData, Resonpse } from "./data/data_ty
 import { DataModel, dataModel, DAtA_URI } from "./data/data";
 import { httpUniappRequest, Http } from "./uni/uni_http";
 import * as ZngUni from "./uni/uni"
+import { BaseService, ModelCallBack } from "./uni/base"
 import {
     copyText,
     Callback,
@@ -53,7 +54,9 @@ export {
     DAtA_URI,
     Common,
     Http,
-    ZngUni
+    ZngUni,
+    BaseService,
+    ModelCallBack
 };
 
 
