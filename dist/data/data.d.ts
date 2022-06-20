@@ -22,4 +22,4 @@ export declare class DataModel {
     anyData<T = any>(key: string, data: DataRequest): Promise<Resonpse<T>> | undefined;
     httpDo<T = any>(url: string, data: Partial<DataRequest>): Promise<Resonpse<T>>;
 }
-export declare const dataModel: (table: string, http?: Http | undefined) => DataModel;
+export declare const dataModel: (table: string, http?: Http) => DataModel;

@@ -6,6 +6,7 @@ import { DataModel, dataModel, DAtA_URI } from "./data/data";
 import { httpUniappRequest, Http } from "./uni/uni_http";
 import * as ZngUni from "./uni/uni";
 import { BaseService, ModelCallBack } from "./uni/base";
+import { Base64 } from "js-base64";
 import { copyText, Callback, syncPromise, uniappJumpTo, OnscrollCallback, windowOnscroll } from "./uni/uni_fn";
-export { optFn, optValue, optOption, optValueType, http, httpPost, httpGet, httpPostJson, httpUniappRequest, filedOption, copyText, syncPromise, uniappJumpTo, windowOnscroll, dataModel };
+export { optFn, optValue, optOption, optValueType, http, httpPost, httpGet, httpPostJson, httpUniappRequest, filedOption, copyText, syncPromise, uniappJumpTo, windowOnscroll, dataModel, Base64 as base64 };
 export { OnscrollCallback, Callback, CommonList, DataRequest, ExtOptionData, Resonpse, DataModel, OptionType, OptionFn, VauleType, OptionData, DATE_FORMAT, DAtA_URI, Common, Http, ZngUni, BaseService, ModelCallBack };

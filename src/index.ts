@@ -13,6 +13,7 @@ import { DataModel, dataModel, DAtA_URI } from "./data/data";
 import { httpUniappRequest, Http } from "./uni/uni_http";
 import * as ZngUni from "./uni/uni"
 import { BaseService, ModelCallBack } from "./uni/base"
+import { Base64 } from "js-base64";
 import {
     copyText,
     Callback,
@@ -36,7 +37,8 @@ export {
     syncPromise,
     uniappJumpTo,
     windowOnscroll,
-    dataModel
+    dataModel,
+    Base64 as base64
 };
 export {
     OnscrollCallback,

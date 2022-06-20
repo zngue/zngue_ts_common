@@ -1,7 +1,11 @@
 "use strict";
 var __createBinding = (this && this.__createBinding) || (Object.create ? (function(o, m, k, k2) {
     if (k2 === undefined) k2 = k;
-    Object.defineProperty(o, k2, { enumerable: true, get: function() { return m[k]; } });
+    var desc = Object.getOwnPropertyDescriptor(m, k);
+    if (!desc || ("get" in desc ? !m.__esModule : desc.writable || desc.configurable)) {
+      desc = { enumerable: true, get: function() { return m[k]; } };
+    }
+    Object.defineProperty(o, k2, desc);
 }) : (function(o, m, k, k2) {
     if (k2 === undefined) k2 = k;
     o[k2] = m[k];
@@ -19,7 +23,7 @@ var __importStar = (this && this.__importStar) || function (mod) {
     return result;
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.BaseService = exports.ZngUni = exports.Http = exports.DATE_FORMAT = exports.DataModel = exports.dataModel = exports.windowOnscroll = exports.uniappJumpTo = exports.syncPromise = exports.copyText = exports.filedOption = exports.httpUniappRequest = exports.httpPostJson = exports.httpGet = exports.httpPost = exports.http = exports.optValueType = exports.optOption = exports.optValue = exports.optFn = void 0;
+exports.BaseService = exports.ZngUni = exports.Http = exports.DATE_FORMAT = exports.DataModel = exports.base64 = exports.dataModel = exports.windowOnscroll = exports.uniappJumpTo = exports.syncPromise = exports.copyText = exports.filedOption = exports.httpUniappRequest = exports.httpPostJson = exports.httpGet = exports.httpPost = exports.http = exports.optValueType = exports.optOption = exports.optValue = exports.optFn = void 0;
 const where_option_1 = require("./data/where_option");
 Object.defineProperty(exports, "optFn", { enumerable: true, get: function () { return where_option_1.optFn; } });
 Object.defineProperty(exports, "optValue", { enumerable: true, get: function () { return where_option_1.optValue; } });
@@ -43,6 +47,8 @@ const ZngUni = __importStar(require("./uni/uni"));
 exports.ZngUni = ZngUni;
 const base_1 = require("./uni/base");
 Object.defineProperty(exports, "BaseService", { enumerable: true, get: function () { return base_1.BaseService; } });
+const js_base64_1 = require("js-base64");
+Object.defineProperty(exports, "base64", { enumerable: true, get: function () { return js_base64_1.Base64; } });
 const uni_fn_1 = require("./uni/uni_fn");
 Object.defineProperty(exports, "copyText", { enumerable: true, get: function () { return uni_fn_1.copyText; } });
 Object.defineProperty(exports, "syncPromise", { enumerable: true, get: function () { return uni_fn_1.syncPromise; } });
