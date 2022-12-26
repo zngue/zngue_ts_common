@@ -1,0 +1,144 @@
+
+.make-m-p(@num:1,@u:1rpx,@end:100) when(@num<=@end)  {
+  @data:@num*@u;
+  .u-m-t-@{num}{
+    margin-top:@data;
+  }
+  .u-m-t-@{num}{
+    margin-top: @data;
+  }
+  .u-p-t-@{num}{
+    padding-top: @data;
+  }
+  .u-m-b-@{num}{
+    margin-bottom:@data;
+  }
+  .u-p-b-@{num}{
+    padding-bottom:@data;
+  }
+  .u-m-r-@{num}{
+    margin-right:@data;
+  }
+  .u-p-r-@{num}{
+    padding-right:@data;
+  }
+  .u-m-l-@{num}{
+    margin-left: @data;
+  }
+  .u-p-l-@{num}{
+    padding-left:@data;
+  }
+  .u-m-@{num}{
+    margin: @data;
+  }
+  .u-p-@{num}{
+    padding: @data;
+  }
+  
+  .u-b-r-@{num}{
+    border-radius: @data
+  }
+  .make-m-p((@num+1),@u);
+}
+.make-u-b(@num:1,@u:1rpx,@end:100)when(@num<=@end){
+    @data:@num*@u;
+    .u-b-r-@{num}{
+        border-radius: @data
+    }
+    .make-u-b(@num+1,@u)
+}
+
+.make-h-w(@num:1,@u:1rpx,@end:1000)when(@num<@end)  {
+    @data:@num*@u;
+    .u-h-@{num}{
+        height: @data;
+      }
+      .u-w-@{num}{
+        width: @data;
+      }
+      .u-w-h-@{num}{
+        width: @data;
+        height: @data;
+      }
+      .make-h-w(@num+1,@u);
+}
+
+.make-text-line(@num:1,@end:5) when(@num<=@end)  {
+    .u-t-l-@{num}{
+        overflow:hidden;
+        text-overflow:ellipsis;
+        display:-webkit-box;
+        -webkit-line-clamp:@num;
+        -webkit-box-orient:vertical;
+    }
+    .make-text-line(@num+1);
+}
+
+.make-font(@num:1,@u:1rpx,@end:50) when(@num<=@end)  {
+    @data:@num*@u;
+    .u-f-@{num}{
+      font-size: @data;
+    }
+    .u-l-h-@{num}{
+      height: @data;
+      line-height: @data;
+    }
+    .make-font((@num+1),@u);
+}
+
+.make-grid-list(@i:1,@gap:10rpx,@end:24) when(@i<=@end) {
+  .u-g-@{i}{
+    display: grid;
+    grid-template-columns: repeat(@i,auto);
+    grid-gap:@gap;
+  }
+  .make-grid-list(@i+1,@gap);
+}
+.u-m-o{
+  margin: 0 auto;
+}
+.u-f-w{
+  display: flex;
+  flex: wrap;
+}
+.u-f-c{
+  display: flex;
+  flex-direction: column;
+}
+.u-f-b{
+  display: flex;
+  justify-content: space-between;
+}
+.u-f-a{
+  display: flex;
+  justify-content: space-around;
+}
+.u-t-a-l{
+  text-align: left;
+}
+.u-t-a-r{
+  text-align: right;
+}
+.u-t-a-c{
+  text-align: center;
+}
+@textAlign: left, right,center;
+.make-text-align(){
+  each(@textAlign,{
+    .u-t-@{value}{
+        text-align: @value;
+    }
+  })
+}
+@num:1;
+@u:1rpx;
+.make-all(@u){
+  .make-grid-list(1,@u);
+  .make-font(10,@u);
+  .make-text-line(1);
+  .make-h-w(10,@u);
+  .make-m-p(1,@u);
+  .make-u-b();
+  .make-text-align()
+}
+.make-all(@u);

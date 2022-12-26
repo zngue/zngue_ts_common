@@ -15,6 +15,7 @@ import * as ZngUni from "./uni/uni"
 import { BaseService, ModelCallBack } from "./uni/base"
 import { Base64 } from "js-base64";
 import moment from "moment";
+import { BaseModel } from "./data/base_model"
 import {
     copyText,
     Callback,
@@ -40,10 +41,12 @@ export {
     windowOnscroll,
     dataModel,
     Base64 as base64,
+
     moment
 };
 export {
     OnscrollCallback,
+    BaseModel,
     Callback,
     CommonList,
     DataRequest,

@@ -8,6 +8,7 @@ import * as ZngUni from "./uni/uni";
 import { BaseService, ModelCallBack } from "./uni/base";
 import { Base64 } from "js-base64";
 import moment from "moment";
+import { BaseModel } from "./data/base_model";
 import { copyText, Callback, syncPromise, uniappJumpTo, OnscrollCallback, windowOnscroll } from "./uni/uni_fn";
 export { optFn, optValue, optOption, optValueType, http, httpPost, httpGet, httpPostJson, httpUniappRequest, filedOption, copyText, syncPromise, uniappJumpTo, windowOnscroll, dataModel, Base64 as base64, moment };
-export { OnscrollCallback, Callback, CommonList, DataRequest, ExtOptionData, Resonpse, DataModel, OptionType, OptionFn, VauleType, OptionData, DATE_FORMAT, DAtA_URI, Common, Http, ZngUni, BaseService, ModelCallBack };
+export { OnscrollCallback, BaseModel, Callback, CommonList, DataRequest, ExtOptionData, Resonpse, DataModel, OptionType, OptionFn, VauleType, OptionData, DATE_FORMAT, DAtA_URI, Common, Http, ZngUni, BaseService, ModelCallBack };

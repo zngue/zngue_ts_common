@@ -1,6 +1,6 @@
 {
   "name": "zngue_ts_common",
-  "version": "0.0.18",
+  "version": "0.0.21",
   "description": "",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
