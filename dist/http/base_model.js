@@ -1,19 +1,26 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.httpRequest = void 0;
+exports.httpAxiosRequest = exports.Http = void 0;
 const http_1 = require("./http");
 class Http {
-    httpGet(url, data = {}) {
-        return (0, http_1.httpGet)(url, data);
+    constructor(config) {
+        this.config = config;
     }
-    httpPost(url, data = {}) {
-        return (0, http_1.httpPost)(url, data);
+    httpGet(url, data, config) {
+        const axiosConfig = config ? config : this.config;
+        return (0, http_1.httpGet)(url, data, axiosConfig);
     }
-    httpPostJson(url, data = {}) {
-        return (0, http_1.httpPostJson)(url, data);
+    httpPost(url, data, params, config) {
+        const axiosConfig = config ? config : this.config;
+        return (0, http_1.httpPost)(url, data, params, axiosConfig);
+    }
+    httpPostJson(url, data, params, config) {
+        const axiosConfig = config ? config : this.config;
+        return (0, http_1.httpPostJson)(url, data, params, axiosConfig);
     }
 }
-const httpRequest = () => {
-    return new Http();
+exports.Http = Http;
+const httpAxiosRequest = (config) => {
+    return new Http(config);
 };
-exports.httpRequest = httpRequest;
+exports.httpAxiosRequest = httpAxiosRequest;

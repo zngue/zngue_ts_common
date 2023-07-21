@@ -26,7 +26,7 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.BaseService = exports.ZngUni = exports.Http = exports.DATE_FORMAT = exports.DataModel = exports.BaseModel = exports.moment = exports.base64 = exports.dataModel = exports.windowOnscroll = exports.uniappJumpTo = exports.syncPromise = exports.copyText = exports.filedOption = exports.httpUniappRequest = exports.httpPostJson = exports.httpGet = exports.httpPost = exports.http = exports.optValueType = exports.optOption = exports.optValue = exports.optFn = void 0;
+exports.BaseService = exports.ZngUni = exports.Http = exports.DATE_FORMAT = exports.DataModel = exports.BaseModel = exports.moment = exports.httpAxiosRequest = exports.base64 = exports.dataModel = exports.windowOnscroll = exports.uniappJumpTo = exports.syncPromise = exports.copyText = exports.filedOption = exports.httpUniappRequest = exports.httpPostJson = exports.httpGet = exports.httpPost = exports.http = exports.optValueType = exports.optOption = exports.optValue = exports.optFn = void 0;
 const where_option_1 = require("./data/where_option");
 Object.defineProperty(exports, "optFn", { enumerable: true, get: function () { return where_option_1.optFn; } });
 Object.defineProperty(exports, "optValue", { enumerable: true, get: function () { return where_option_1.optValue; } });
@@ -61,3 +61,5 @@ Object.defineProperty(exports, "copyText", { enumerable: true, get: function () 
 Object.defineProperty(exports, "syncPromise", { enumerable: true, get: function () { return uni_fn_1.syncPromise; } });
 Object.defineProperty(exports, "uniappJumpTo", { enumerable: true, get: function () { return uni_fn_1.uniappJumpTo; } });
 Object.defineProperty(exports, "windowOnscroll", { enumerable: true, get: function () { return uni_fn_1.windowOnscroll; } });
+const base_model_2 = require("./http/base_model");
+Object.defineProperty(exports, "httpAxiosRequest", { enumerable: true, get: function () { return base_model_2.httpAxiosRequest; } });

@@ -24,6 +24,7 @@ import {
     OnscrollCallback,
     windowOnscroll,
 } from "./uni/uni_fn";
+import { httpAxiosRequest } from "./http/base_model";
 export {
     optFn,
     optValue,
@@ -41,6 +42,7 @@ export {
     windowOnscroll,
     dataModel,
     Base64 as base64,
+    httpAxiosRequest,
 
     moment
 };

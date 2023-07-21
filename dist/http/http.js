@@ -15,14 +15,16 @@ const http = axios_1.default.create({
     },
 });
 exports.http = http;
+let requestCallback = null; // 请求拦截器回调
 http.interceptors.request.use((config) => {
     nprogress_1.default.start();
     const token = localStorage.getItem("token");
-    let headers = config.headers;
     if (token) {
-        headers.token = token;
+        config.headers.set("token", token);
     }
-    config.headers = headers;
+    if (requestCallback) {
+        config = requestCallback(config);
+    }
     return config;
 });
 http.interceptors.response.use((res) => {
@@ -42,46 +44,42 @@ http.interceptors.response.use((res) => {
     }
     return Promise.reject(err);
 });
-function httpGet(url, data = {}) {
+function httpGet(url, data, config) {
+    if (config) {
+        requestCallback = config;
+    }
     return new Promise((resolve, reject) => {
-        http
-            .get(url, { params: data })
-            .then((r) => {
+        http.get(url, {
+            params: data,
+        }).then((r) => {
             resolve(r.data);
-        })
-            .catch((res) => {
+        }).catch((res) => {
             reject(res);
         });
     });
 }
 exports.httpGet = httpGet;
-function httpPost(url, data = {}) {
+function httpPost(url, data, params, config) {
+    if (config) {
+        requestCallback = config;
+    }
     return new Promise((resolve, reject) => {
-        http
-            .post(url, qs_1.default.stringify(data), {
-            headers: {
-                "content-type": "application/x-www-form-urlencoded; charset=UTF-8",
-            },
-        })
-            .then((r) => {
+        http.post(url, data ? qs_1.default.stringify(data) : {}, { params: params }).then((r) => {
             resolve(r.data);
-        })
-            .catch((res) => {
+        }).catch((res) => {
             reject(res);
         });
     });
 }
 exports.httpPost = httpPost;
-function httpPostJson(url, data = {}, params = {}) {
+function httpPostJson(url, data, params, config) {
+    if (config) {
+        requestCallback = config;
+    }
     return new Promise((resolve, reject) => {
-        http
-            .post(url, data, {
-            params: params,
-        })
-            .then((r) => {
+        http.post(url, data, { params: params }).then((r) => {
             resolve(r.data);
-        })
-            .catch((res) => {
+        }).catch((res) => {
             reject(res);
         });
     });
